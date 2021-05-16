@@ -12,7 +12,7 @@
     <bean name="MysqlImpl" class="com.kuang.dao.UserDaoMysqlImpl"/>
     <bean name="OracleImpl" class="com.kuang.dao.UserDaoOracleImpl"/>
 
-    <bean id="ServiceImpl" class="com.kuang.service.impl.UserServiceImpl">
+    <bean id="ServiceImpl" class="com.kuang.service.UserServiceImpl">
 <!--    这里的name并不是属性，而是set方法后面的那部分，首字母小写     -->
 <!--        引用另外一个bean，不是value 而是ref-->
         <property name="userDao" ref="OracleImpl"/>

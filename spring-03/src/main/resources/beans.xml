@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.kuang.pojo.User">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="name" value="kuangshen"></property>
+    </bean>
+
+    <!-- more bean definitions go here -->
+    <bean name="userT" class="com.kuang.pojo.UserT">
+<!--        根据index下标 index指构造方法，下标从0开始-->
+        <constructor-arg index="0" value="kuang"/>
+<!--        根据参数名  name指参数名-->
+<!--        <constructor-arg name="name" value="kuang2"/>-->
+<!--        根据参数类型 -->
+<!--        <constructor-arg type="java.lang.String" value="kuang3"/>-->
+    </bean>
+</beans>
