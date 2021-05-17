@@ -4,10 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.kuang.pojo.User">
-        <!-- collaborators and configuration for this bean go here -->
-        <property name="name" value="kuangshen"></property>
-    </bean>
 
     <!-- more bean definitions go here -->
     <bean name="userT" class="com.kuang.pojo.UserT">
@@ -17,5 +13,27 @@
 <!--        <constructor-arg name="name" value="kuang2"/>-->
 <!--        根据参数类型 -->
 <!--        <constructor-arg type="java.lang.String" value="kuang3"/>-->
+    </bean>
+
+
+<!--    <bean id="user" class="com.kuang.pojo.User">-->
+        <!-- collaborators and configuration for this bean go here -->
+<!--        <property name="name" value="kuangshen"></property>-->
+<!--    </bean>-->
+
+<!--    别名 -->
+    <alias name="user" alias="userAlias"/>
+
+    <!--bean就是java对象,由Spring创建和管理-->
+    <!--
+        id 是bean的标识符,要唯一,如果没有配置id,name就是默认标识符
+        如果配置id,又配置了name,那么name是别名
+        name可以设置多个别名,可以用逗号,分号,空格隔开
+        如果不配置id和name,可以根据applicationContext.getBean(.class)获取对象;
+
+        class是bean的全限定名=包名+类名
+    -->
+    <bean id="user" name="hello2 h2,h3;h4" class="com.kuang.pojo.User">
+        <property name="name" value="Spring"/>
     </bean>
 </beans>
