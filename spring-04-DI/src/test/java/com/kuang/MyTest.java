@@ -1,6 +1,7 @@
 package com.kuang;
 
 import com.kuang.pojo.Student;
+import com.kuang.pojo.User;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,4 +22,11 @@ public class MyTest {
 
     }
 
+    @Test
+    public void test02(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        User user = (User) context.getBean("user");
+        System.out.println(user);
+
+    }
 }

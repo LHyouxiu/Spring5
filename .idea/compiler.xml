@@ -10,7 +10,13 @@
         <module name="spring-03" />
         <module name="spring-01" />
         <module name="spring-04-DI" />
+        <module name="spring-05-Aut" />
+        <module name="spring-06-Annotation" />
+        <module name="spring-07-appconfig" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-05-auto" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

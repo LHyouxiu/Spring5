@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-context.xsd">
+
+    <!--    <bean id="dog" class="com.kuang.pojo.Dog"/>-->
+
+    <!--    <bean id="cat" class="com.kuang.pojo.Cat"/>-->
+
+    <!--    NoUniqueBeanDefinitionException  报错-->
+    <!--    <bean id="cat2" class="com.kuang.pojo.Cat"/>-->
+
+    <!--    <bean id="user" class="com.kuang.pojo.User">-->
+    <!--        <property name="cat" ref="cat"/>-->
+    <!--        <property name="dog" ref="dog"/>-->
+    <!--        <property name="str" value="qinjiang"/>-->
+    <!--    </bean>-->
+
+    <!--    autowire byName (按名称自动装配)-->
+    <!--    <bean id="user" class="com.kuang.pojo.User" autowire="byName">-->
+    <!--        <property name="str" value="qinjiang"/>-->
+    <!--    </bean>-->
+
+    <!--autowire byType (按类型自动装配)
+    使用autowire byType首先需要保证：同一类型的对象，在spring容器中唯一。如果不唯一，会报不唯一的异常。-->
+    <!--    <bean id="user" class="com.kuang.pojo.User" autowire="byType">-->
+    <!--        <property name="str" value="byType"/>-->
+    <!--    </bean>-->
+
+
+    <!--  使用注解  1.头文件引用
+        2.<context:annotation-config/>
+    -->
+    <context:annotation-config/>
+    <bean id="cat" class="com.kuang.pojo.Cat"/>
+    <bean id="cat11" class="com.kuang.pojo.Cat"/>
+    <bean id="dog" class="com.kuang.pojo.Dog"/>
+    <bean id="dog22" class="com.kuang.pojo.Dog"/>
+    <bean id="user" class="com.kuang.pojo.User"/>
+</beans>
