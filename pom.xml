@@ -18,6 +18,7 @@
         <module>spring-05-Aut</module>
         <module>spring-06-Annotation</module>
         <module>spring-07-appconfig</module>
+        <module>spring-08-proxy</module>
     </modules>
 
     <properties>
