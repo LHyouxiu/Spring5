@@ -12,6 +12,7 @@
         <module name="spring-04-DI" />
         <module name="spring-05-Aut" />
         <module name="spring-06-Annotation" />
+        <module name="spring-09-aop" />
         <module name="spring-07-appconfig" />
         <module name="spring-08-proxy" />
       </profile>

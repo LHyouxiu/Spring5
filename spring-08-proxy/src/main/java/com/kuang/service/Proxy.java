@@ -1,4 +1,4 @@
-package com.kuang.demo01;
+package com.kuang.service;
 
 public class Proxy {
     private Host host;
