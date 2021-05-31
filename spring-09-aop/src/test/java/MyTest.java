@@ -10,4 +10,18 @@ public class MyTest {
         UserService userService = (UserService) context.getBean("userService");
         userService.search();
     }
+
+    @Test
+    public void test01(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        UserService userService = (UserService) context.getBean("diy");
+        userService.add();
+    }
+
+    @Test
+    public void test03(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("annabeans.xml");
+        UserService userService = (UserService) context.getBean("annotationPointcut");
+        userService.search();
+    }
 }

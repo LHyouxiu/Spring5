@@ -14,7 +14,6 @@
         <module>spring-03</module>
         <module>spring-04-DI</module>
         <module>spring-05-auto</module>
-        <module>spring-05-auto</module>
         <module>spring-05-Aut</module>
         <module>spring-06-Annotation</module>
         <module>spring-07-appconfig</module>
@@ -28,16 +27,44 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.10.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.1.10.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>spring-03</artifactId>
@@ -49,10 +76,18 @@
             <artifactId>spring-aop</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.4</version>
-        </dependency>
     </dependencies>
+<!--    打包配置-->
+    <build>
+        <resources>
+             <resource>
+                  <directory>src/main/java</directory>
+                      <includes>
+                            <include>**/*.properties</include>
+                            <include>**/*.xml</include>
+                      </includes>
+                  <filtering>true</filtering>
+             </resource>
+        </resources>
+    </build>
 </project>
