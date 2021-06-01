@@ -1,5 +1,7 @@
 package com.kuang.service;
 
+import org.aspectj.lang.JoinPoint;
+
 public class UserServiceImpl implements UserService{
     @Override
     public void add() {

@@ -10,12 +10,12 @@ import org.aspectj.lang.annotation.Before;
 public class AnnotationPointcut {
     @Before("execution(* com.kuang.service.UserServiceImpl.*(..))")
     public void before(){
-        System.out.println("--------------方法执行前--------------");
+        System.out.println("--------------方法执行前3--------------");
     }
 
     @After("execution(* com.kuang.service.UserServiceImpl.*(..))")
     public void after(){
-        System.out.println("--------------方法执行后--------------");
+        System.out.println("--------------方法执行后3--------------");
     }
 
     @Around("execution(* com.kuang.service.UserServiceImpl.*(..))")

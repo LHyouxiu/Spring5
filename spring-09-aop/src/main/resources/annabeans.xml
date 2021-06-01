@@ -7,8 +7,8 @@
              http://www.springframework.org/schema/aop
              http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+        <bean id="userService" class="com.kuang.service.UserServiceImpl"/>
         <bean id="annotationPointcut" class="com.kuang.config.AnnotationPointcut"/>
         <aop:aspectj-autoproxy/>
-
 
 </beans>
