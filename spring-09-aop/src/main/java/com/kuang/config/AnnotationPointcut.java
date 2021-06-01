@@ -6,7 +6,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
-@Aspect
+@Aspect //标注这个类是一个切面
 public class AnnotationPointcut {
     @Before("execution(* com.kuang.service.UserServiceImpl.*(..))")
     public void before(){
