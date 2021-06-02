@@ -1,6 +1,6 @@
 package com.kuang.utils;
 
-import com.kuang.dao.UserMapper;
+import com.kuang.mapper.UserMapper;
 import com.kuang.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
