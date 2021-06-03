@@ -20,6 +20,7 @@
         <module>spring-08-proxy</module>
         <module>spring-09-aop</module>
         <module>spring-10-mybatis</module>
+        <module>spring-11-declaractive</module>
     </modules>
 
     <properties>
@@ -75,6 +76,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>5.1.5.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+            <version>1.3.61</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 <!--    打包配置-->

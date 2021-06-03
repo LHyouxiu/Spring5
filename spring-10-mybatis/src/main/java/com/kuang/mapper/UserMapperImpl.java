@@ -1,32 +1,22 @@
 package com.kuang.mapper;
 
 import com.kuang.pojo.User;
-import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import java.util.List;
+import org.mybatis.spring.SqlSessionTemplate;
 
 public class UserMapperImpl implements UserMapper{
 //    在之前我们所有的操作的都是用sqlSession来操作，现在使用sqlSessionTemplate
-    private sqlSessionTemplate sqlSession;
+    private SqlSessionTemplate sqlSession;
 
-    public void setSqlSession(sqlSessionTemplate sqlSession){
+    public void setSqlSession(SqlSessionTemplate sqlSession){
         this.sqlSession = sqlSession;
     }
 
     @Override
     public List<User> selectUser() {
-//        sqlSession
-        return null;
-    }
-
-    @Override
-    public int addUser(User user) {
-        return 0;
-    }
-
-    @Override
-    public int deleteUser(int id) {
-        return 0;
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        return mapper.selectUser();
     }
 }
 

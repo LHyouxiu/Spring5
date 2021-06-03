@@ -2,10 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
              http://www.springframework.org/schema/beans/spring-beans.xsd
              http://www.springframework.org/schema/aop
-             http://www.springframework.org/schema/aop/spring-aop.xsd">
+             http://www.springframework.org/schema/aop/spring-aop.xsd
+             http://www.springframework.org/schema/tx
+             http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 <!--    dataSource使用spring的数据源替换mybatis的配置
     此处使用Spring提供的jdbc: org.springframework.jdbc.datasource
@@ -32,8 +35,39 @@
     </bean>
 
 
-<!--    此部分可单独提出去 以上部分是整合mybatis的公共部分-->
-<!--    <bean id="userMapper" class="com.kuang.mapper.UserMapperImpl">-->
-<!--        <property name="sqlSession" ref="sqlSession"/>-->
-<!--    </bean>-->
+
+
+
+
+
+
+<!--    配置声明式事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<!--        <constructor-arg ref="dataSource" />-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+<!--    结合aop实现事物的植入-->
+<!--    配置事务通知-->
+    <tx:advice id="txadvice" transaction-manager="transactionManager">
+<!--        给那些方法配置事务-->
+        <tx:attributes>
+            <tx:method name="add" propagation="REQUIRED"/>
+            <tx:method name="delete" propagation="REQUIRED"/>
+            <tx:method name="update" propagation="REQUIRED"/>
+            <tx:method name="query" read-only="true"/>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+<!--    配置事务切入-->
+    <aop:config>
+        <aop:pointcut id="txPointCut" expression="execution(* com.kuang.mapper.*.*(..))"/>
+        <aop:advisor advice-ref="txadvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+
+
+
+
+
 </beans>
